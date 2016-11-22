@@ -127,7 +127,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-WV-ygm">
                                                             <rect key="frame" x="0.0" y="0.0" width="112" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -171,6 +171,7 @@
                     </view>
                     <connections>
                         <outlet property="restaurantImageView" destination="iur-Wh-b0U" id="QD8-sS-nbK"/>
+                        <outlet property="tableView" destination="adz-xJ-V8Y" id="cl7-ID-k7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTp-nW-2yh" userLabel="First Responder" sceneMemberID="firstResponder"/>

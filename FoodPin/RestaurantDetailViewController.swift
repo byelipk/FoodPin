@@ -15,6 +15,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var restaurantTypeLabel: UILabel!
     @IBOutlet var restaurantImageView: UIImageView!
     
+    @IBOutlet var tableView: UITableView!
+    
     var restaurant: Restaurant!
 
     override func viewDidLoad() {
@@ -22,6 +24,16 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)
+        
+        // Change background color of table view
+        tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        
+        // Change color of the separators
+        tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
+        
+        // Remove the separators of the empty rows.
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +81,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        
+        // This makes the cells transparent, so that the background color of the table view can be seen.
+        cell.backgroundColor = UIColor.clear
         
         return cell
     }

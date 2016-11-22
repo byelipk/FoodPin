@@ -66,40 +66,40 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Show an action sheet when a cell is tapped
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-        
-        // Action 1 - Dismiss action sheet
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        // Action 2 - Call restaurant
-        let callActionHandler = {(action: UIAlertAction!) -> Void in
-            let title = "Service Unavailable"
-            let message =  "Sorry, the call feature is not ready yet. Try again in a week or two."
-            let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                
-            self.present(alertMessage, animated: true, completion: nil)
-        }
-        let callAction = UIAlertAction(title: "Call: " + "(123) 456-32\(indexPath.row)", style: .default, handler: callActionHandler)
-        
-        // Action 3 - Check in at restaurant
-        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
-            (action: UIAlertAction!) -> Void in
-                let cell = tableView.cellForRow(at: indexPath)
-                cell?.accessoryType = .checkmark
-        })
-        
-        optionMenu.addAction(callAction)
-        optionMenu.addAction(checkInAction)
-        optionMenu.addAction(cancelAction)
-        
-        present(optionMenu, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        // Show an action sheet when a cell is tapped
+//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+//        
+//        // Action 1 - Dismiss action sheet
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        
+//        // Action 2 - Call restaurant
+//        let callActionHandler = {(action: UIAlertAction!) -> Void in
+//            let title = "Service Unavailable"
+//            let message =  "Sorry, the call feature is not ready yet. Try again in a week or two."
+//            let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//            
+//            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                
+//            self.present(alertMessage, animated: true, completion: nil)
+//        }
+//        let callAction = UIAlertAction(title: "Call: " + "(123) 456-32\(indexPath.row)", style: .default, handler: callActionHandler)
+//        
+//        // Action 3 - Check in at restaurant
+//        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
+//            (action: UIAlertAction!) -> Void in
+//                let cell = tableView.cellForRow(at: indexPath)
+//                cell?.accessoryType = .checkmark
+//        })
+//        
+//        optionMenu.addAction(callAction)
+//        optionMenu.addAction(checkInAction)
+//        optionMenu.addAction(cancelAction)
+//        
+//        present(optionMenu, animated: true, completion: nil)
+//        
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
     
 
     /*
@@ -112,6 +112,7 @@ class RestaurantTableViewController: UITableViewController {
 
     
     // Override to support editing the table view.
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
@@ -126,6 +127,7 @@ class RestaurantTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+   */
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         // Social sharing button
@@ -173,14 +175,22 @@ class RestaurantTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                
+                destinationController.restaurantImage    = restaurantImages[indexPath.row]
+                destinationController.restaurantName     = restaurantNames[indexPath.row]
+                destinationController.restaurantLocation = restaurantLocations[indexPath.row]
+                destinationController.restaurantType     = restaurantTypes[indexPath.row]
+            }
+        }
     }
-    */
+
 
 }

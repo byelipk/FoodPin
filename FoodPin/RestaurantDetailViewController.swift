@@ -14,6 +14,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var restaurantLocationLabel: UILabel!
     @IBOutlet var restaurantTypeLabel: UILabel!
     @IBOutlet var restaurantImageView: UIImageView!
+    @IBOutlet var restaurantPhoneLabel: UILabel!
     
     @IBOutlet var tableView: UITableView!
     
@@ -67,7 +68,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 
     
@@ -87,6 +88,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         case 3:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited) ? "Yes!" : "No"
+        case 4:
+            cell.fieldLabel.text = "Phone"
+            cell.valueLabel.text = restaurant.phone
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

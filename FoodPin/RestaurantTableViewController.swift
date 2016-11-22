@@ -57,12 +57,48 @@ class RestaurantTableViewController: UITableViewController {
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         
+        // NOTE
         // Update thumbnail properties to make rounded borders borders.
         // We can also make this update through the interface builder...
-//         cell.thumbnailImageView.layer.cornerRadius = 30.0
-//         cell.thumbnailImageView.clipsToBounds = true
+        // cell.thumbnailImageView.layer.cornerRadius = 30.0
+        // cell.thumbnailImageView.clipsToBounds = true
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Show an action sheet when a cell is tapped
+        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+        
+        // Action 1 - Dismiss action sheet
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        // Action 2 - Call restaurant
+        let callActionHandler = {(action: UIAlertAction!) -> Void in
+            let title = "Service Unavailable"
+            let message =  "Sorry, the call feature is not ready yet. Try again in a week or two."
+            let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+            self.present(alertMessage, animated: true, completion: nil)
+        }
+        let callAction = UIAlertAction(title: "Call: " + "(123) 456-32\(indexPath.row)", style: .default, handler: callActionHandler)
+        
+        // Action 3 - Check in at restaurant
+        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler: {
+            (action: UIAlertAction!) -> Void in
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.accessoryType = .checkmark
+        })
+        
+        optionMenu.addAction(callAction)
+        optionMenu.addAction(checkInAction)
+        optionMenu.addAction(cancelAction)
+        
+        present(optionMenu, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
 

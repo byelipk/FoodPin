@@ -33,7 +33,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Remove the separators of the empty rows.
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-
+        
+        // Set the title at the top of the screen
+        title = restaurant.name
+        
     }
 
     override func didReceiveMemoryWarning() {

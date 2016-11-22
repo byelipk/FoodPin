@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantDetailViewController: UIViewController {
+class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var restaurantNameLabel: UILabel!
     @IBOutlet var restaurantLocationLabel: UILabel!
@@ -21,11 +21,7 @@ class RestaurantDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        restaurantImageView.image    = UIImage(named: restaurant.image)
-        restaurantNameLabel.text     = restaurant.name
-        restaurantLocationLabel.text = restaurant.location
-        restaurantTypeLabel.text     = restaurant.type
-        
+        restaurantImageView.image = UIImage(named: restaurant.image)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,5 +39,39 @@ class RestaurantDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantDetailTableViewCell
+        
+        switch indexPath.row {
+        case 0:
+            cell.fieldLabel.text = "Name"
+            cell.valueLabel.text = restaurant.name
+        case 1:
+            cell.fieldLabel.text = "Type"
+            cell.valueLabel.text = restaurant.type
+        case 2:
+            cell.fieldLabel.text = "Location"
+            cell.valueLabel.text = restaurant.location
+        case 3:
+            cell.fieldLabel.text = "Been here"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes!" : "No"
+        default:
+            cell.fieldLabel.text = ""
+            cell.valueLabel.text = ""
+        }
+        
+        return cell
+    }
+    
 
 }

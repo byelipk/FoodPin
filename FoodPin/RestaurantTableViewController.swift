@@ -59,8 +59,8 @@ class RestaurantTableViewController: UITableViewController {
         
         // Update thumbnail properties to make rounded borders borders.
         // We can also make this update through the interface builder...
-        // cell.thumbnailImageView.layer.cornerRadius = 30.0
-        // cell.thumbnailImageView.clipsToBounds = true
+//         cell.thumbnailImageView.layer.cornerRadius = 30.0
+//         cell.thumbnailImageView.clipsToBounds = true
 
         return cell
     }

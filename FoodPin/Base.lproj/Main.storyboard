@@ -146,7 +146,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QcJ-Ll-Jmg" secondAttribute="trailing" id="HSP-tS-jqG"/>
                                                 <constraint firstItem="QcJ-Ll-Jmg" firstAttribute="centerY" secondItem="VYh-bA-yHN" secondAttribute="centerY" id="HbT-xF-WgT"/>
+                                                <constraint firstAttribute="bottom" secondItem="QcJ-Ll-Jmg" secondAttribute="bottom" constant="7" id="WGw-R6-Pll"/>
                                                 <constraint firstItem="QcJ-Ll-Jmg" firstAttribute="leading" secondItem="VYh-bA-yHN" secondAttribute="leadingMargin" constant="23" id="lm5-hA-y4e"/>
+                                                <constraint firstItem="QcJ-Ll-Jmg" firstAttribute="top" secondItem="VYh-bA-yHN" secondAttribute="top" constant="7" id="og3-uu-ji5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

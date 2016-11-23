@@ -40,7 +40,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         
         // dynamic cells
-        tableView.estimatedRowHeight = 36.0
+        tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
     }

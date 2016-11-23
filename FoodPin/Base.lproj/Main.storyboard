@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WQj-sW-3aQ" id="xui-47-xVq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="flz-oB-TjY">
@@ -51,7 +51,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4X-ke-TcJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4X-ke-TcJ">
                                                             <rect key="frame" x="0.0" y="26" width="283" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,7 +72,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="flz-oB-TjY" secondAttribute="trailing" id="UyY-a5-kXh"/>
                                         <constraint firstItem="flz-oB-TjY" firstAttribute="leading" secondItem="xui-47-xVq" secondAttribute="leadingMargin" constant="6" id="X7I-PD-MyP"/>
                                         <constraint firstItem="flz-oB-TjY" firstAttribute="top" secondItem="xui-47-xVq" secondAttribute="topMargin" constant="2" id="eXq-Zc-ZlE"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="flz-oB-TjY" secondAttribute="bottom" constant="1.5" id="weN-2P-ncW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="flz-oB-TjY" secondAttribute="bottom" constant="1.5" id="x9s-WT-ZpS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -10,12 +10,8 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var restaurantNameLabel: UILabel!
-    @IBOutlet var restaurantLocationLabel: UILabel!
-    @IBOutlet var restaurantTypeLabel: UILabel!
+
     @IBOutlet var restaurantImageView: UIImageView!
-    @IBOutlet var restaurantPhoneLabel: UILabel!
-    
     @IBOutlet var tableView: UITableView!
     
     var restaurant: Restaurant!
@@ -40,7 +36,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         
         // dynamic cells
-        tableView.estimatedRowHeight = 80.0
+        tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
     }
@@ -91,11 +87,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
         case 3:
-            cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes!" : "No"
-        case 4:
             cell.fieldLabel.text = "Phone"
             cell.valueLabel.text = restaurant.phone
+        case 4:
+            cell.fieldLabel.text = "Been here"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes!" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

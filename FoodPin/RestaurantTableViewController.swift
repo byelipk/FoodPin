@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RestaurantTableViewController: UITableViewController {
     
     var restaurants:[Restaurant] = [
@@ -205,6 +206,9 @@ class RestaurantTableViewController: UITableViewController {
                 let destinationController = segue.destination as! RestaurantDetailViewController
                 destinationController.restaurant = restaurants[indexPath.row]
             }
+            print("SWEET")
+        } else {
+            print("FUCK")
         }
     }
 

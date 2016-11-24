@@ -132,7 +132,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQv-2o-GqJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQv-2o-GqJ">
                                                             <rect key="frame" x="117.5" y="0.0" width="235.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -145,6 +145,8 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="aBG-la-qWW" firstAttribute="top" secondItem="2ID-9M-zNJ" secondAttribute="top" constant="7" id="PLD-yI-wwD"/>
+                                                <constraint firstAttribute="bottom" secondItem="aBG-la-qWW" secondAttribute="bottom" constant="7" id="RnG-UP-KdK"/>
                                                 <constraint firstItem="aBG-la-qWW" firstAttribute="leading" secondItem="2ID-9M-zNJ" secondAttribute="leadingMargin" constant="6" id="ab5-xn-W0A"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aBG-la-qWW" secondAttribute="trailing" id="iIz-cp-eek"/>
                                                 <constraint firstItem="aBG-la-qWW" firstAttribute="centerY" secondItem="2ID-9M-zNJ" secondAttribute="centerY" id="til-re-yJz"/>

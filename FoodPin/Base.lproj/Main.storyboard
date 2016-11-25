@@ -290,6 +290,7 @@ What do you think?</string>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="Q5m-Qa-1LM" id="zLX-GX-r8P"/>
+                        <outlet property="containerView" destination="EUv-tG-kj5" id="TxI-NK-dqG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWv-HH-h58" userLabel="First Responder" sceneMemberID="firstResponder"/>

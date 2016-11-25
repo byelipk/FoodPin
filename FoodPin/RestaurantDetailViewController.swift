@@ -103,25 +103,34 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReview" {
+            let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        }
+    }
+    
     
     // Declaring our "unwind" function
     @IBAction func close(segue: UIStoryboardSegue) {
         print("CLOSING REVIEW MODAL")
     }
     
-    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
-        print("Tapped rating button...")
-        
-        if let rating = segue.identifier {
-            restaurant.isVisited = true
-            
-            switch rating {
-            case "great": restaurant.rating = "Abslutely love it! Must try."
-            case "good":  restaurant.rating = "Pretty good."
-            case "dislike": restaurant.rating = "I don't like it."
-            default: break
-            }
-        }
+    @IBAction func love(segue: UIStoryboardSegue) {
+        visitAndRateRestaurant(rating: "Abslutely love it! Must try.")
+    }
+    
+    @IBAction func good(segue: UIStoryboardSegue) {
+        visitAndRateRestaurant(rating: "Pretty good.")
+    }
+    
+    @IBAction func dislike(segue: UIStoryboardSegue) {
+        visitAndRateRestaurant(rating: "I don't like it.")
+    }
+    
+    func visitAndRateRestaurant(rating: String) {
+        restaurant.isVisited = true
+        restaurant.rating = rating
         
         tableView.reloadData()
     }

@@ -231,7 +231,7 @@ What do you think?</string>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Absolutely love it!"/>
                                                 <connections>
-                                                    <segue destination="BBL-M1-gqO" kind="unwind" identifier="great" unwindAction="ratingButtonTappedWithSegue:" id="xcB-7c-sF0"/>
+                                                    <segue destination="BBL-M1-gqO" kind="unwind" unwindAction="loveWithSegue:" id="8Vg-k5-cJI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cID-Wa-WB7">
@@ -241,7 +241,7 @@ What do you think?</string>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Good"/>
                                                 <connections>
-                                                    <segue destination="BBL-M1-gqO" kind="unwind" identifier="good" unwindAction="ratingButtonTappedWithSegue:" id="gZC-ht-WyJ"/>
+                                                    <segue destination="BBL-M1-gqO" kind="unwind" unwindAction="goodWithSegue:" id="s0N-B9-NzX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfS-Ar-qIH">
@@ -251,7 +251,7 @@ What do you think?</string>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="I don't like it"/>
                                                 <connections>
-                                                    <segue destination="BBL-M1-gqO" kind="unwind" identifier="dislike" unwindAction="ratingButtonTappedWithSegue:" id="knf-3o-M8h"/>
+                                                    <segue destination="BBL-M1-gqO" kind="unwind" unwindAction="dislikeWithSegue:" id="HGY-bw-fPK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -300,6 +300,7 @@ What do you think?</string>
                     <connections>
                         <outlet property="backgroundImageView" destination="Q5m-Qa-1LM" id="zLX-GX-r8P"/>
                         <outlet property="containerView" destination="EUv-tG-kj5" id="TxI-NK-dqG"/>
+                        <outlet property="reviewImageView" destination="cue-6g-Ndm" id="3Yl-wt-tTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWv-HH-h58" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -103,5 +103,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     
+    
+    // Declaring our "unwind" function
+    @IBAction func close(segue:UIStoryboardSegue) {
+        
+    }
 
 }

@@ -91,7 +91,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes!" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before: \(restaurant.rating)" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
@@ -105,8 +105,25 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     
     // Declaring our "unwind" function
-    @IBAction func close(segue:UIStoryboardSegue) {
+    @IBAction func close(segue: UIStoryboardSegue) {
+        print("CLOSING REVIEW MODAL")
+    }
+    
+    @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
+        print("Tapped rating button...")
         
+        if let rating = segue.identifier {
+            restaurant.isVisited = true
+            
+            switch rating {
+            case "great": restaurant.rating = "Abslutely love it! Must try."
+            case "good":  restaurant.rating = "Pretty good."
+            case "dislike": restaurant.rating = "I don't like it."
+            default: break
+            }
+        }
+        
+        tableView.reloadData()
     }
 
 }

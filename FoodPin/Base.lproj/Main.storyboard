@@ -201,12 +201,74 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafeloisl" translatesAutoresizingMaskIntoConstraints="NO" id="Q5m-Qa-1LM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-tG-kj5">
+                                <rect key="frame" x="53" y="40" width="269" height="420"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrafina" translatesAutoresizingMaskIntoConstraints="NO" id="cue-6g-Ndm">
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="2Qj-xd-Bxf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agt-uw-wgB">
+                                        <rect key="frame" x="15" y="208" width="239" height="64.5"/>
+                                        <string key="text">You've dined here.
+What do you think?</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ket-oY-u7y">
+                                        <rect key="frame" x="8" y="287.5" width="253" height="122.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9u-vS-rPd">
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="37.5"/>
+                                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Absolutely love it!"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cID-Wa-WB7">
+                                                <rect key="frame" x="0.0" y="42.5" width="253" height="37.5"/>
+                                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Good"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfS-Ar-qIH">
+                                                <rect key="frame" x="0.0" y="85" width="253" height="37.5"/>
+                                                <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="I don't like it"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Agt-uw-wgB" firstAttribute="leading" secondItem="EUv-tG-kj5" secondAttribute="leading" constant="15" id="9cz-LY-mmt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ket-oY-u7y" secondAttribute="bottom" constant="10" id="AI5-4F-ZZP"/>
+                                    <constraint firstItem="Ket-oY-u7y" firstAttribute="leading" secondItem="EUv-tG-kj5" secondAttribute="leading" constant="8" id="Bu0-aO-XHr"/>
+                                    <constraint firstItem="Ket-oY-u7y" firstAttribute="top" secondItem="Agt-uw-wgB" secondAttribute="bottom" constant="15" id="LnR-YH-fee"/>
+                                    <constraint firstItem="cue-6g-Ndm" firstAttribute="leading" secondItem="EUv-tG-kj5" secondAttribute="leading" id="Nbf-uU-HgL"/>
+                                    <constraint firstItem="Agt-uw-wgB" firstAttribute="top" secondItem="cue-6g-Ndm" secondAttribute="bottom" constant="8" id="RNX-4M-i8H"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ket-oY-u7y" secondAttribute="trailing" constant="8" id="hGa-7c-smm"/>
+                                    <constraint firstAttribute="height" constant="420" id="iTI-0Z-2bi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Agt-uw-wgB" secondAttribute="trailing" constant="15" id="kyP-QW-c74"/>
+                                    <constraint firstAttribute="trailing" secondItem="cue-6g-Ndm" secondAttribute="trailing" id="yue-5A-azu"/>
+                                    <constraint firstItem="cue-6g-Ndm" firstAttribute="top" secondItem="EUv-tG-kj5" secondAttribute="top" id="zkR-Zj-CB9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EUv-tG-kj5" firstAttribute="top" secondItem="7za-A0-lCh" secondAttribute="bottom" constant="20" id="NgK-bH-Pc1"/>
                             <constraint firstItem="Q5m-Qa-1LM" firstAttribute="leading" secondItem="LnZ-4f-lqh" secondAttribute="leading" id="RgI-y6-nvJ"/>
+                            <constraint firstItem="EUv-tG-kj5" firstAttribute="leading" secondItem="LnZ-4f-lqh" secondAttribute="leadingMargin" constant="37" id="izB-QH-crg"/>
                             <constraint firstAttribute="trailing" secondItem="Q5m-Qa-1LM" secondAttribute="trailing" id="puP-tU-25z"/>
                             <constraint firstItem="Q5m-Qa-1LM" firstAttribute="bottom" secondItem="Ilj-wp-cwV" secondAttribute="top" id="xat-ce-Qlf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EUv-tG-kj5" secondAttribute="trailing" constant="37" id="y4a-u6-l0m"/>
                             <constraint firstItem="Q5m-Qa-1LM" firstAttribute="top" secondItem="LnZ-4f-lqh" secondAttribute="top" id="yTM-63-vKp"/>
                         </constraints>
                     </view>
@@ -235,6 +297,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="barrafina" width="480" height="480"/>
         <image name="cafeloisl" width="480" height="480"/>
         <image name="check" width="28" height="28"/>
     </resources>

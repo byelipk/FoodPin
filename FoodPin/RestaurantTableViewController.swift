@@ -79,7 +79,7 @@ class RestaurantTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Restaurant", for: indexPath) as! RestaurantTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantTableViewCell
 
         // Configure our custom RestaurantTableViewCell...
         cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)

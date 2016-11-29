@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     @IBOutlet var restaurantImageView: UIImageView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var mapView: MKMapView!
     
     var restaurant: Restaurant!
 
@@ -29,7 +31,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
         // Remove the separators of the empty rows.
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        // tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         // Set the title at the top of the screen
         title = restaurant.name
@@ -39,6 +41,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Recognize tap gestures so we can perform a segue to the map view controller
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func showMap() {
+        performSegue(withIdentifier: "showMap", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

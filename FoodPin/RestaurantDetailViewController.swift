@@ -44,6 +44,33 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         // Recognize tap gestures so we can perform a segue to the map view controller
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
         mapView.addGestureRecognizer(tapGestureRecognizer)
+        
+        // Add a pin annotation to the non-interactive map in the table footer
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {(placemarks, error) -> Void in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                // get the first placemark
+                let placemark = placemarks[0]
+                
+                // add annotation
+                let annotation = MKPointAnnotation()
+                
+                if let location = placemark.location {
+                    // display the annotation
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    
+                    // set the zoom level
+                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
+                    self.mapView.setRegion(region, animated: false)
+                }
+            }
+        })
     }
     
     func showMap() {
@@ -115,6 +142,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showReview" {
             let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        }
+        
+        else if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
             destinationController.restaurant = restaurant
         }
     }

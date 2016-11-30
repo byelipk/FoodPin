@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     // Establish connection with mapview in storyboard
     @IBOutlet var mapView: MKMapView!
@@ -20,6 +20,17 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // ensure this class is a delegate of mapView
+        mapView.delegate = self
+        
+        // Customize mapView
+        mapView.showsScale = true
+        mapView.showsCompass = true
+        mapView.showsTraffic = true
+        mapView.showsBuildings = true
+        mapView.showsUserLocation = true
+        mapView.showsPointsOfInterest = true
         
         // Query the Apple server for some placemarks
         let geoCoder = CLGeocoder()
@@ -54,6 +65,31 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "myPin"
+        
+        if annotation.isKind(of: MKUserLocation.self) {
+            return nil
+        }
+        
+        // reuse the annotation if possible
+        var annotationView: MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout =  true
+            
+            // Customize pinTintColor
+            annotationView?.pinTintColor = UIColor.blue
+        }
+        
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
+        leftIconView.image = UIImage(named: restaurant.image)
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        
+        return annotationView
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -64,5 +100,7 @@ class MapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

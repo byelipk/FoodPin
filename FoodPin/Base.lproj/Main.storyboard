@@ -120,12 +120,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="UDp-QW-7s3">
-                                                    <rect key="frame" x="157" y="94" width="64" height="64"/>
+                                                    <rect key="frame" x="155.5" y="93" width="64" height="64"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="UDp-QW-7s3" firstAttribute="leading" secondItem="e7G-fO-4d9" secondAttribute="leading" constant="157" id="EvB-Qi-3u4"/>
-                                                <constraint firstItem="UDp-QW-7s3" firstAttribute="top" secondItem="e7G-fO-4d9" secondAttribute="topMargin" constant="86" id="FcW-Zd-BdY"/>
+                                                <constraint firstItem="UDp-QW-7s3" firstAttribute="centerX" secondItem="e7G-fO-4d9" secondAttribute="centerX" id="C13-Q9-IwR"/>
+                                                <constraint firstItem="UDp-QW-7s3" firstAttribute="centerY" secondItem="e7G-fO-4d9" secondAttribute="centerY" id="ZK6-fK-Dne"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -305,6 +305,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="UDp-QW-7s3" id="y4z-P5-bG0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFa-Gu-qcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="J5F-vl-lSs" userLabel="Exit" sceneMemberID="exit"/>

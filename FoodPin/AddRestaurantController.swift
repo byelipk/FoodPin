@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -18,6 +19,8 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet weak var noButton: UIButton!
     
     var isVisited = false
+    
+    var restaurant: RestaurantMO!
 
     
     override func viewDidLoad() {
@@ -154,7 +157,25 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     // UTILITY FUNCTIONS
     
     func handleValidForm() -> Void {
-        performSegue(withIdentifier: "userDidSaveForm", sender: self)
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameField?.text
+            restaurant.type = typeField?.text
+            restaurant.location = locationField?.text
+            restaurant.isVisited = isVisited
+            
+            if let restaurantImage = photoImageView.image {
+                if let imageData = UIImagePNGRepresentation(restaurantImage) {
+                    restaurant.image = NSData(data: imageData)
+                }
+            }
+            
+            appDelegate.saveContext()
+            
+            performSegue(withIdentifier: "userDidSaveForm", sender: self)
+        } else {
+            print("Something went horribly wrong and we could not save the restaurant.")
+        }
     }
     
     func formIsValid() -> Bool {

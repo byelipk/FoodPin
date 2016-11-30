@@ -16,13 +16,13 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var tableView: UITableView!
     @IBOutlet var mapView: MKMapView!
     
-    var restaurant: Restaurant!
+    var restaurant: RestaurantMO!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image as! Data)
         
         // Change background color of table view
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
@@ -47,7 +47,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         
         // Add a pin annotation to the non-interactive map in the table footer
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {(placemarks, error) -> Void in
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: {(placemarks, error) -> Void in
             if let error = error {
                 print(error)
                 return
@@ -172,6 +172,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     func visitAndRateRestaurant(rating: String) {
         restaurant.isVisited = true
         restaurant.rating = rating
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            appDelegate.saveContext()
+        }
         
         tableView.reloadData()
     }

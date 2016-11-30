@@ -14,7 +14,6 @@
 		8B07CBB41DE3DED900876EFE /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07CBB31DE3DED900876EFE /* RestaurantTableViewController.swift */; };
 		8B07CBB61DE3E46600876EFE /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07CBB51DE3E46600876EFE /* RestaurantTableViewCell.swift */; };
 		8B09DFE51DEF46080001D54F /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B09DFE41DEF46080001D54F /* AddRestaurantController.swift */; };
-		8B09DFE71DEF7EA00001D54F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B09DFE61DEF7EA00001D54F /* CoreData.framework */; };
 		8B09DFEA1DEF80F00001D54F /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B09DFE81DEF80F00001D54F /* FoodPin.xcdatamodeld */; };
 		8B0B9A771DE8E30600389688 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9A761DE8E30600389688 /* ReviewViewController.swift */; };
 		8B3C95011DE4A72800D090A2 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C95001DE4A72800D090A2 /* RestaurantDetailViewController.swift */; };
@@ -49,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B09DFE71DEF7EA00001D54F /* CoreData.framework in Frameworks */,
 				8BAB757B1DEE1C6700C225CB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,14 +14,14 @@ class ReviewViewController: UIViewController {
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var containerView: UIView!
     
-    var restaurant: Restaurant!
+    var restaurant: RestaurantMO!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        backgroundImageView.image = UIImage(named: restaurant.image)
-        reviewImageView.image = UIImage(named: restaurant.image)
+        backgroundImageView.image = UIImage(data: restaurant.image as! Data)
+        reviewImageView.image = UIImage(data: restaurant.image as! Data)
         
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -55,15 +55,5 @@ class ReviewViewController: UIViewController {
 //        }, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

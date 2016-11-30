@@ -14,7 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // Establish connection with mapview in storyboard
     @IBOutlet var mapView: MKMapView!
     
-    var restaurant: Restaurant!
+    var restaurant: RestaurantMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         // Query the Apple server for some placemarks
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {(placemarks, error) -> Void in
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: {(placemarks, error) -> Void in
             if let error = error {
                 print(error)
                 return
@@ -84,7 +84,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
-        leftIconView.image = UIImage(named: restaurant.image)
+        leftIconView.image = UIImage(data: restaurant.image as! Data)
         annotationView?.leftCalloutAccessoryView = leftIconView
         
         return annotationView

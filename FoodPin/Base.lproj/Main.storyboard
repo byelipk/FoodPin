@@ -261,6 +261,9 @@
                                                                     <state key="normal" title="YES">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="toggleIsVisited:" destination="96i-eF-Acp" eventType="touchUpInside" id="Ze8-ns-ucq"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ar-q0-lVM">
                                                                     <rect key="frame" x="75" y="2.5" width="65.5" height="32"/>
@@ -269,6 +272,9 @@
                                                                     <state key="normal" title="NO">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="toggleIsVisited:" destination="UFa-Gu-qcQ" eventType="touchUpInside" id="NyH-KC-wmj"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -299,14 +305,23 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Restaurant" id="OlF-jh-xeb">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="VSW-d7-A4r">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="J5F-vl-lSs" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="h86-uP-Frg"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UpO-RD-HFA">
+                            <connections>
+                                <action selector="saveRestaurant:" destination="96i-eF-Acp" id="gfl-Mv-pNa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationField" destination="UC0-9O-0DF" id="FPM-zc-t6I"/>
+                        <outlet property="nameField" destination="fZd-PC-CQD" id="lVG-Bi-jMw"/>
+                        <outlet property="noButton" destination="7ar-q0-lVM" id="kc4-TC-OVw"/>
                         <outlet property="photoImageView" destination="UDp-QW-7s3" id="y4z-P5-bG0"/>
+                        <outlet property="typeField" destination="cne-fL-Rap" id="mGU-cG-efu"/>
+                        <outlet property="yesButton" destination="81G-cn-BPI" id="Y2e-0W-sYb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFa-Gu-qcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

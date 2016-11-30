@@ -208,8 +208,13 @@ class RestaurantTableViewController: UITableViewController {
             }
             print("SWEET")
         } else {
-            print("FUCK")
+            print("Transitioning to \(segue.identifier)")
         }
+    }
+    
+    // An unwind segue for when we want to cancel adding a new restaurant.
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
+        print("Let's go home!")
     }
 
 

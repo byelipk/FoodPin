@@ -214,7 +214,14 @@ class RestaurantTableViewController: UITableViewController {
     
     // An unwind segue for when we want to cancel adding a new restaurant.
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
-        print("Let's go home!")
+        if segue.identifier == "userDidCancel" {
+            print("I can't believe you stood me up, bro!")
+        }
+        
+        else if segue.identifier == "userDidSaveForm" {
+            print("Holy cow! Nice job saving that form!")
+        }
+        
     }
 
 

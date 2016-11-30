@@ -122,38 +122,8 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
         dismiss(animated: true, completion: nil)
     }
     
-    func formIsValid() -> Bool {
-        if nameField.text?.isEmpty     == true ||
-           typeField.text?.isEmpty     == true ||
-           locationField.text?.isEmpty == true
-        {
-            return false
-        }
-        
-        return true
-    }
-    
-    func displayAlertToUser() -> Void {
-        let alertController = UIAlertController(
-            title: "Oh, shit!",
-            message: "There are some errors you need to fix before we can allow you to submit this form.",
-            preferredStyle: .alert
-        )
-        
-        let action1 = UIAlertAction(
-            title: "I get it",
-            style: .default,
-            handler: nil
-        )
-        
-        alertController.addAction(action1)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func handleValidForm() -> Void {
-        print("Nice job!")
-    }
+
+
     
 
     // ACTIONS
@@ -178,5 +148,41 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             yesButton.backgroundColor = UIColor.lightGray
             noButton.backgroundColor  = UIColor.red
         }
+    }
+    
+    
+    // UTILITY FUNCTIONS
+    
+    func handleValidForm() -> Void {
+        performSegue(withIdentifier: "userDidSaveForm", sender: self)
+    }
+    
+    func formIsValid() -> Bool {
+        if nameField.text?.isEmpty      == true ||
+            typeField.text?.isEmpty     == true ||
+            locationField.text?.isEmpty == true
+        {
+            return false
+        }
+        
+        return true
+    }
+    
+    func displayAlertToUser() -> Void {
+        let alertController = UIAlertController(
+            title: "Oh, shit!",
+            message: "There are some errors you need to fix before we can allow you to submit this form.",
+            preferredStyle: .alert
+        )
+        
+        let action1 = UIAlertAction(
+            title: "I get it",
+            style: .default,
+            handler: nil
+        )
+        
+        alertController.addAction(action1)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }

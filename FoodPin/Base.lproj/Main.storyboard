@@ -306,7 +306,7 @@
                     <navigationItem key="navigationItem" title="New Restaurant" id="OlF-jh-xeb">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="VSW-d7-A4r">
                             <connections>
-                                <segue destination="J5F-vl-lSs" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="h86-uP-Frg"/>
+                                <segue destination="J5F-vl-lSs" kind="unwind" identifier="userDidCancel" unwindAction="unwindToHomeScreenWithSegue:" id="9ZT-eO-QFH"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="UpO-RD-HFA">
@@ -322,6 +322,7 @@
                         <outlet property="photoImageView" destination="UDp-QW-7s3" id="y4z-P5-bG0"/>
                         <outlet property="typeField" destination="cne-fL-Rap" id="mGU-cG-efu"/>
                         <outlet property="yesButton" destination="81G-cn-BPI" id="Y2e-0W-sYb"/>
+                        <segue destination="J5F-vl-lSs" kind="unwind" identifier="userDidSaveForm" unwindAction="unwindToHomeScreenWithSegue:" id="pRz-IS-YF8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFa-Gu-qcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

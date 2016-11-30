@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -63,5 +64,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    // CORE DATA STACK
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "FoodPin")
+        container.loadPersistentStores(completionHandler: {(storeDescription, error) -> Void in
+            if let error = error as? NSError {
+                fatalError("Something fishy happened: \(error), \(error.userInfo)")
+            }
+        })
+        
+        return container
+    }()
+    
+    // CORE DATA SAVING SUPPORT
+    
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Something fishy happened: \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    
 }
 

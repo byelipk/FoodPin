@@ -15,6 +15,7 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var locationField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     
@@ -163,6 +164,10 @@ class AddRestaurantController: UITableViewController, UIImagePickerControllerDel
             restaurant.type = typeField?.text
             restaurant.location = locationField?.text
             restaurant.isVisited = isVisited
+            
+            if let phoneText = phoneField?.text {
+               restaurant.phone = phoneText
+            }
             
             if let restaurantImage = photoImageView.image {
                 if let imageData = UIImagePNGRepresentation(restaurantImage) {

@@ -127,7 +127,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before: \(restaurant.rating)" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before: \(restaurant.rating!)" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

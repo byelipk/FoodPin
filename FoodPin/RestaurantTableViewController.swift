@@ -15,6 +15,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     var restaurants: [RestaurantMO] = []
     
     var fetchResultController: NSFetchedResultsController<RestaurantMO>!
+    
+    var searchController: UISearchController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +64,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 print(error)
             }
         }
+        
+        // CREATE THE SEARCH CONTROLLER
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
     }
     
     override func viewWillAppear(_ animated: Bool) {

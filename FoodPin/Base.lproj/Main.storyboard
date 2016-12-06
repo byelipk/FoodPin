@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -617,6 +618,72 @@ What do you think?</string>
                 <exit id="BBL-M1-gqO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2856.8000000000002" y="151.57421289355324"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="SSv-zq-RRd">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GBA-Dg-iog" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgZ-sz-epH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1846" y="150"/>
+        </scene>
+        <!--Walkthrough Content View Controller-->
+        <scene sceneID="GCm-1c-23j">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="2lz-wU-Eop" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="65J-Jc-xcF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ipX-ye-8i7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k65-We-eJc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLf-tx-HCh">
+                                <rect key="frame" x="111" y="28" width="153" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-e8-Fbt">
+                                <rect key="frame" x="37" y="81" width="300" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h6J-e8-Fbt" secondAttribute="height" multiplier="75:58" id="a4t-9W-QKM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin your favorite restaurants and create your own food guide" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ1-fu-PUu">
+                                <rect key="frame" x="46" y="350" width="282" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="zZM-ww-KCC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="h6J-e8-Fbt" secondAttribute="trailing" constant="22" id="5NA-tM-EDm"/>
+                            <constraint firstItem="FZ1-fu-PUu" firstAttribute="top" secondItem="h6J-e8-Fbt" secondAttribute="bottom" constant="37" id="DyW-ad-wwb"/>
+                            <constraint firstItem="h6J-e8-Fbt" firstAttribute="top" secondItem="QLf-tx-HCh" secondAttribute="bottom" constant="19.5" id="GCy-By-ysS"/>
+                            <constraint firstItem="QLf-tx-HCh" firstAttribute="leading" secondItem="k65-We-eJc" secondAttribute="leadingMargin" constant="95" id="H0a-cs-shp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QLf-tx-HCh" secondAttribute="trailing" constant="95" id="PkQ-7W-S40"/>
+                            <constraint firstItem="QLf-tx-HCh" firstAttribute="top" secondItem="65J-Jc-xcF" secondAttribute="bottom" constant="8" id="SiZ-lK-VN8"/>
+                            <constraint firstItem="FZ1-fu-PUu" firstAttribute="centerX" secondItem="h6J-e8-Fbt" secondAttribute="centerX" id="qRI-cU-ps5"/>
+                            <constraint firstItem="h6J-e8-Fbt" firstAttribute="leading" secondItem="k65-We-eJc" secondAttribute="leadingMargin" constant="21" id="tvA-qh-Aug"/>
+                            <constraint firstItem="QLf-tx-HCh" firstAttribute="centerX" secondItem="k65-We-eJc" secondAttribute="centerX" id="wPo-zt-EQ3"/>
+                            <constraint firstItem="FZ1-fu-PUu" firstAttribute="leading" secondItem="k65-We-eJc" secondAttribute="leadingMargin" constant="30" id="z40-uJ-p78"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="h6J-e8-Fbt" id="nw7-Ku-cWl"/>
+                        <outlet property="contentLabel" destination="FZ1-fu-PUu" id="bpN-vs-Dwo"/>
+                        <outlet property="headingLabel" destination="QLf-tx-HCh" id="5ys-du-AO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgt-FA-wgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-919.20000000000005" y="150.67466266866569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h03-Jl-O5B">

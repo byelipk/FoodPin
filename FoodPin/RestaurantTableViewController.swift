@@ -85,6 +85,13 @@ class RestaurantTableViewController:
         
         navigationController?.hidesBarsOnSwipe = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
+            print("HELLO!")
+            present(pageViewController, animated: true, completion: nil)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

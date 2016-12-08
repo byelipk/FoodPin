@@ -44,19 +44,20 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return pageHeadings.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughContentViewController") as? WalkthroughContentViewController {
-            
-            return pageContentViewController.index
-        }
-        
-        return 0
-    }
+
+    // REMOVED SO WE CAN IMPLEMENT A CUSTOM PAGE CONTROL
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return pageHeadings.count
+//    }
+//    
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        if let pageContentViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughContentViewController") as? WalkthroughContentViewController {
+//            
+//            return pageContentViewController.index
+//        }
+//        
+//        return 0
+//    }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! WalkthroughContentViewController).index
@@ -90,6 +91,12 @@ class WalkthroughPageViewController: UIPageViewController, UIPageViewControllerD
         }
         
         return nil
+    }
+    
+    func forward(index: Int) {
+        if let nextViewController = contentViewController(at: index + 1) {
+            setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+        }
     }
 
 }

@@ -640,19 +640,19 @@ What do you think?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLf-tx-HCh">
-                                <rect key="frame" x="111" y="28" width="153" height="34"/>
+                                <rect key="frame" x="111" y="28" width="153" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-e8-Fbt">
-                                <rect key="frame" x="37" y="81" width="300" height="232"/>
+                                <rect key="frame" x="37" y="80.5" width="300" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h6J-e8-Fbt" secondAttribute="height" multiplier="75:58" id="a4t-9W-QKM"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin your favorite restaurants and create your own food guide" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ1-fu-PUu">
-                                <rect key="frame" x="46" y="350" width="282" height="64"/>
+                                <rect key="frame" x="46" y="349.5" width="282" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="zZM-ww-KCC"/>
                                 </constraints>
@@ -660,15 +660,41 @@ What do you think?</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YDn-io-MYI">
+                                <rect key="frame" x="327" y="617" width="32" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOv-1M-pX4">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextButtonTappedWithSender:" destination="2lz-wU-Eop" eventType="touchUpInside" id="gSj-SF-Tgu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WA2-lw-D4P">
+                                <rect key="frame" x="168" y="614" width="39" height="37"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Os9-rw-zM2">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.06950727541" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="h6J-e8-Fbt" secondAttribute="trailing" constant="22" id="5NA-tM-EDm"/>
+                            <constraint firstItem="YDn-io-MYI" firstAttribute="trailing" secondItem="k65-We-eJc" secondAttribute="trailingMargin" id="Auc-Me-HZL"/>
                             <constraint firstItem="FZ1-fu-PUu" firstAttribute="top" secondItem="h6J-e8-Fbt" secondAttribute="bottom" constant="37" id="DyW-ad-wwb"/>
                             <constraint firstItem="h6J-e8-Fbt" firstAttribute="top" secondItem="QLf-tx-HCh" secondAttribute="bottom" constant="19.5" id="GCy-By-ysS"/>
                             <constraint firstItem="QLf-tx-HCh" firstAttribute="leading" secondItem="k65-We-eJc" secondAttribute="leadingMargin" constant="95" id="H0a-cs-shp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QLf-tx-HCh" secondAttribute="trailing" constant="95" id="PkQ-7W-S40"/>
+                            <constraint firstItem="ipX-ye-8i7" firstAttribute="top" secondItem="WA2-lw-D4P" secondAttribute="bottom" constant="16" id="Q64-Mw-Bsr"/>
                             <constraint firstItem="QLf-tx-HCh" firstAttribute="top" secondItem="65J-Jc-xcF" secondAttribute="bottom" constant="8" id="SiZ-lK-VN8"/>
+                            <constraint firstItem="WA2-lw-D4P" firstAttribute="centerX" secondItem="k65-We-eJc" secondAttribute="centerX" id="i4O-yf-cLn"/>
+                            <constraint firstItem="ipX-ye-8i7" firstAttribute="top" secondItem="YDn-io-MYI" secondAttribute="bottom" constant="20" id="olx-BP-nns"/>
                             <constraint firstItem="FZ1-fu-PUu" firstAttribute="centerX" secondItem="h6J-e8-Fbt" secondAttribute="centerX" id="qRI-cU-ps5"/>
                             <constraint firstItem="h6J-e8-Fbt" firstAttribute="leading" secondItem="k65-We-eJc" secondAttribute="leadingMargin" constant="21" id="tvA-qh-Aug"/>
                             <constraint firstItem="QLf-tx-HCh" firstAttribute="centerX" secondItem="k65-We-eJc" secondAttribute="centerX" id="wPo-zt-EQ3"/>
@@ -678,7 +704,9 @@ What do you think?</string>
                     <connections>
                         <outlet property="contentImageView" destination="h6J-e8-Fbt" id="nw7-Ku-cWl"/>
                         <outlet property="contentLabel" destination="FZ1-fu-PUu" id="bpN-vs-Dwo"/>
+                        <outlet property="forwardButton" destination="BOv-1M-pX4" id="gnP-Ou-Zty"/>
                         <outlet property="headingLabel" destination="QLf-tx-HCh" id="5ys-du-AO3"/>
+                        <outlet property="pageControl" destination="Os9-rw-zM2" id="TOn-YO-Oka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgt-FA-wgv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -13,6 +13,8 @@ class WalkthroughContentViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var forwardButton: UIButton!
     
     var index = 0
     var heading = ""
@@ -26,6 +28,17 @@ class WalkthroughContentViewController: UIViewController {
         headingLabel.text = heading
         contentLabel.text = content
         contentImageView.image = UIImage(named: imageFile)
+        
+        pageControl.currentPage = index
+        
+        switch index {
+        case 0...1:
+            forwardButton.setTitle("NEXT", for: .normal)
+        case 2:
+            forwardButton.setTitle("DONE", for: .normal)
+        default:
+            break
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,4 +57,16 @@ class WalkthroughContentViewController: UIViewController {
     }
     */
 
+    @IBAction func nextButtonTapped(sender: UIButton) {
+        switch index {
+        case 0...1:
+            let pageViewController = parent as! WalkthroughPageViewController
+            pageViewController.forward(index: index)
+        case 2:
+            UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
+            dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
+    }
 }

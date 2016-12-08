@@ -720,6 +720,52 @@ What do you think?</string>
             </objects>
             <point key="canvasLocation" x="-919.20000000000005" y="150.67466266866569"/>
         </scene>
+        <!--About-->
+        <scene sceneID="Fej-lD-lB5">
+            <objects>
+                <tableViewController id="VVv-BF-GeV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nt6-Rb-D8F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Aboutly" id="REX-rn-yZ2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REX-rn-yZ2" id="Cmi-W6-psB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VVv-BF-GeV" id="MC1-XH-MyP"/>
+                            <outlet property="delegate" destination="VVv-BF-GeV" id="zsI-7Y-CjQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About" id="y8U-O3-dF5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hK3-wA-aVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="-672"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="l3B-xU-IE7">
+            <objects>
+                <navigationController id="WHg-xh-a5U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="about" id="KMB-lL-nc7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ujP-gG-9Af">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VVv-BF-GeV" kind="relationship" relationship="rootViewController" id="ZV9-VJ-Ruf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOY-2P-pZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="-672"/>
+        </scene>
         <!--Favorite-->
         <scene sceneID="h03-Jl-O5B">
             <objects>
@@ -769,7 +815,7 @@ What do you think?</string>
                     <connections>
                         <segue destination="1d4-j8-Nmh" kind="relationship" relationship="viewControllers" id="Rh4-ia-IoZ"/>
                         <segue destination="wh7-z9-aUF" kind="relationship" relationship="viewControllers" id="0Fj-Y1-qvQ"/>
-                        <segue destination="HmJ-iY-K5N" kind="relationship" relationship="viewControllers" id="IKf-VB-XNo"/>
+                        <segue destination="WHg-xh-a5U" kind="relationship" relationship="viewControllers" id="IKf-VB-XNo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Egs-CF-mo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,18 +832,9 @@ What do you think?</string>
             </objects>
             <point key="canvasLocation" x="82" y="895"/>
         </scene>
-        <!--Recent-->
-        <scene sceneID="K1m-25-jPn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Recent" id="HmJ-iY-K5N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="a8D-wt-CVA"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bNz-pp-VFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="86" y="-672"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="about" width="23" height="22"/>
         <image name="barrafina" width="480" height="480"/>
         <image name="cafeloisl" width="480" height="480"/>
         <image name="check" width="28" height="28"/>

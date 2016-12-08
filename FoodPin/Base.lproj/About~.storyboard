@@ -720,6 +720,52 @@ What do you think?</string>
             </objects>
             <point key="canvasLocation" x="-919.20000000000005" y="150.67466266866569"/>
         </scene>
+        <!--About-->
+        <scene sceneID="Fej-lD-lB5">
+            <objects>
+                <tableViewController id="VVv-BF-GeV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nt6-Rb-D8F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Aboutly" id="REX-rn-yZ2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REX-rn-yZ2" id="Cmi-W6-psB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VVv-BF-GeV" id="MC1-XH-MyP"/>
+                            <outlet property="delegate" destination="VVv-BF-GeV" id="zsI-7Y-CjQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About" id="y8U-O3-dF5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hK3-wA-aVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="-672"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="l3B-xU-IE7">
+            <objects>
+                <navigationController id="WHg-xh-a5U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="about" id="KMB-lL-nc7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ujP-gG-9Af">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VVv-BF-GeV" kind="relationship" relationship="rootViewController" id="ZV9-VJ-Ruf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOY-2P-pZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="-672"/>
+        </scene>
         <!--Favorite-->
         <scene sceneID="h03-Jl-O5B">
             <objects>
@@ -738,6 +784,52 @@ What do you think?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="and-if-VBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021.6" y="149.77511244377811"/>
+        </scene>
+        <!--Recent-->
+        <scene sceneID="LQN-ZD-lzc">
+            <objects>
+                <tableViewController id="QWI-v9-WvI" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9hJ-Ob-xph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recently" id="GXF-gx-vHZ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GXF-gx-vHZ" id="7qS-kA-aE9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QWI-v9-WvI" id="1pA-HV-3Ho"/>
+                            <outlet property="delegate" destination="QWI-v9-WvI" id="Cmo-2r-dG6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recent" id="8k5-L0-JhL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fn2-2X-PAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="895"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="8N5-dD-zdt">
+            <objects>
+                <navigationController id="vSZ-1x-G6F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="Qsz-ql-4K2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFP-Jb-Lw2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QWI-v9-WvI" kind="relationship" relationship="rootViewController" id="KLY-VH-8za"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEe-cd-H5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="895"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fUt-OX-VLW">
@@ -768,40 +860,22 @@ What do you think?</string>
                     </tabBar>
                     <connections>
                         <segue destination="1d4-j8-Nmh" kind="relationship" relationship="viewControllers" id="Rh4-ia-IoZ"/>
-                        <segue destination="wh7-z9-aUF" kind="relationship" relationship="viewControllers" id="0Fj-Y1-qvQ"/>
-                        <segue destination="HmJ-iY-K5N" kind="relationship" relationship="viewControllers" id="IKf-VB-XNo"/>
+                        <segue destination="vSZ-1x-G6F" kind="relationship" relationship="viewControllers" id="0Fj-Y1-qvQ"/>
+                        <segue destination="WHg-xh-a5U" kind="relationship" relationship="viewControllers" id="IKf-VB-XNo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Egs-CF-mo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82.400000000000006" y="149.77511244377811"/>
         </scene>
-        <!--About-->
-        <scene sceneID="wZR-Py-q6a">
-            <objects>
-                <viewControllerPlaceholder storyboardName="About" id="wh7-z9-aUF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NTD-RD-d0h"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lJD-TV-EIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="82" y="895"/>
-        </scene>
-        <!--Recent-->
-        <scene sceneID="K1m-25-jPn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Recent" id="HmJ-iY-K5N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="a8D-wt-CVA"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bNz-pp-VFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="86" y="-672"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="about" width="23" height="22"/>
         <image name="barrafina" width="480" height="480"/>
         <image name="cafeloisl" width="480" height="480"/>
         <image name="check" width="28" height="28"/>
         <image name="cross" width="24" height="24"/>
+        <image name="discover" width="25" height="19"/>
         <image name="favorite" width="17" height="25"/>
         <image name="photoalbum" width="64" height="64"/>
     </resources>

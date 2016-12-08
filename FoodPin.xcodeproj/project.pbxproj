@@ -16,6 +16,8 @@
 		8B09DFE51DEF46080001D54F /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B09DFE41DEF46080001D54F /* AddRestaurantController.swift */; };
 		8B09DFEA1DEF80F00001D54F /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B09DFE81DEF80F00001D54F /* FoodPin.xcdatamodeld */; };
 		8B0B9A771DE8E30600389688 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B9A761DE8E30600389688 /* ReviewViewController.swift */; };
+		8B3334B11DF908A6004F7E1C /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3334AF1DF908A6004F7E1C /* About.storyboard */; };
+		8B3334B41DF908CA004F7E1C /* Recent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3334B21DF908CA004F7E1C /* Recent.storyboard */; };
 		8B3C95011DE4A72800D090A2 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C95001DE4A72800D090A2 /* RestaurantDetailViewController.swift */; };
 		8B3C95031DE4C02900D090A2 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C95021DE4C02900D090A2 /* Restaurant.swift */; };
 		8B3C95051DE4D2F300D090A2 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C95041DE4D2F300D090A2 /* RestaurantDetailTableViewCell.swift */; };
@@ -38,6 +40,8 @@
 		8B09DFE61DEF7EA00001D54F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B09DFE91DEF80F00001D54F /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		8B0B9A761DE8E30600389688 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		8B3334B01DF908A6004F7E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/About.storyboard; sourceTree = "<group>"; };
+		8B3334B31DF908CA004F7E1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recent.storyboard; sourceTree = "<group>"; };
 		8B3C95001DE4A72800D090A2 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		8B3C95021DE4C02900D090A2 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		8B3C95041DE4D2F300D090A2 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			children = (
 				8B07CBA11DE3DDEB00876EFE /* AppDelegate.swift */,
 				8B07CBA51DE3DDEB00876EFE /* Main.storyboard */,
+				8B3334B21DF908CA004F7E1C /* Recent.storyboard */,
+				8B3334AF1DF908A6004F7E1C /* About.storyboard */,
 				8B07CBA81DE3DDEB00876EFE /* Assets.xcassets */,
 				8B07CBAA1DE3DDEB00876EFE /* LaunchScreen.storyboard */,
 				8B07CBAD1DE3DDEB00876EFE /* Info.plist */,
@@ -199,7 +205,9 @@
 			files = (
 				8B07CBAC1DE3DDEB00876EFE /* LaunchScreen.storyboard in Resources */,
 				8B07CBA91DE3DDEB00876EFE /* Assets.xcassets in Resources */,
+				8B3334B11DF908A6004F7E1C /* About.storyboard in Resources */,
 				8B07CBA71DE3DDEB00876EFE /* Main.storyboard in Resources */,
+				8B3334B41DF908CA004F7E1C /* Recent.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +250,22 @@
 				8B07CBAB1DE3DDEB00876EFE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8B3334AF1DF908A6004F7E1C /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3334B01DF908A6004F7E1C /* Base */,
+			);
+			name = About.storyboard;
+			sourceTree = "<group>";
+		};
+		8B3334B21DF908CA004F7E1C /* Recent.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3334B31DF908CA004F7E1C /* Base */,
+			);
+			name = Recent.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -327,6 +327,8 @@ class RestaurantTableViewController:
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
                 destinationController.restaurant = pluckRestaurant(searching: searchController.isActive, row: indexPath.row)
+                
+//                destinationController.hidesBottomBarWhenPushed = true
             }
             print("SWEET")
         } else {

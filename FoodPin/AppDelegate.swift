@@ -38,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UIApplication.shared.statusBarStyle = .lightContent
         
+        // We can customize our tab bar here
+        customizeTabBar()
+        
         return true
     }
 
@@ -108,6 +111,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func customizeTabBar() {
+        UITabBar.appearance().barTintColor = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+        UITabBar.appearance().selectionIndicatorImage = UIImage(named: "tabitem-selected")
+//        UITabBar.appearance().barTintColor = UIColor.black
+//        UITabBar.appearance().backgroundImage = UIImage(named: "tabbar-background")
     }
     
 }
